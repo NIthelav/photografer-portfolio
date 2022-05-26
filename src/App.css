@@ -1,0 +1,36 @@
+:root {
+  --primary-bg-color: #1e2327;
+  --secondary-bg-color: #e9a904;
+  --primary-tx-color: #ffffff;
+  --secondary-tx-color: #6d767f;
+}
+
+.blue-theme {
+  --primary-bg-color: #1e2327;
+  --secondary-bg-color: #04a9e9;
+}
+
+.light-theme {
+  --primary-bg-color: #e9f6ff;
+  --secondary-bg-color: #e9a904;
+  --primary-tx-color: #000000;
+  --secondary-tx-color: #222527;
+}
+
+.background {
+  position: fixed;
+  height: 100vh;
+  z-index: -1000;
+}
+
+.background_left {
+  left: 0;
+  min-width: 45vw;
+  background-color: var(--primary-bg-color);
+}
+
+.background_right {
+  right: 0;
+  min-width: 55vw;
+  background-color: var(--secondary-bg-color);
+}

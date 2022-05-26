@@ -1,0 +1,6 @@
+.section-galleries {
+  overflow: hidden;
+  display: flex;
+  max-height: 80vh;
+  padding: 10vh 10vw;
+}
