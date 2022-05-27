@@ -39,7 +39,8 @@ export const Slider: FC<SliderProps> = ({ children }) => {
         () =>
           childArr.map((node, idx) => (
             <div
-              className={block("item", { layer: slides[idx] + 1 })}
+              className={block("item")}
+              style={styles[slides[idx]]}
               onClick={() =>
                 setSlides(
                   swap(
