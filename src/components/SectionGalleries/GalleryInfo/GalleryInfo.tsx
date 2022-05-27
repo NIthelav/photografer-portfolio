@@ -26,16 +26,27 @@ export const GalleryInfo: FC<GalleryProps> = ({
         distinctio, quae natus itaque tempore magni dolorem fugiat? Reiciendis,
         neque.
       </p>
-      {
-        <div className={block("slider-points")}>
-          {new Array(slidersNum).fill(0).map((_, idx) => (
-            <div
-              className={block("slider-point", { active: active === idx })}
-              onClick={() => setActive(idx)}
-            />
-          ))}
-        </div>
-      }
+      <div className={block("slider-points")}>
+        <div
+          className={block("arrow", { left: true })}
+          onClick={() => {
+            setActive(active > 0 ? active - 1 : slidersNum - 1);
+          }}
+        />
+        {new Array(slidersNum).fill(0).map((_, idx) => (
+          <div
+            key={idx}
+            className={block("slider-point", { active: active === idx })}
+            onClick={() => setActive(idx)}
+          />
+        ))}
+        <div
+          className={block("arrow", { right: true })}
+          onClick={() => {
+            setActive(active < slidersNum - 1 ? active + 1 : 0);
+          }}
+        />
+      </div>
       <br className={block("line")} />
     </div>
   );

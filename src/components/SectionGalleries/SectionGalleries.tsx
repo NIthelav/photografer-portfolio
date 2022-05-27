@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { cn } from "../../cn";
 import { Gallery } from "./Gallery/Gallery";
 import { GalleryInfo } from "./GalleryInfo/GalleryInfo";
@@ -61,7 +61,6 @@ const galleries = [
 
 export const SectionGalleries = () => {
   const [active, setActive] = useState(0);
-  useEffect(() => console.log(`active: ${active}`), [active]);
   return (
     <div className={block()}>
       <GalleryInfo
@@ -70,8 +69,12 @@ export const SectionGalleries = () => {
         active={active}
       />
       <Slider activeSlide={active} setActiveSlide={setActive}>
-        {galleries.map((gallery) => (
-          <Gallery name={gallery.name} images={gallery.images} />
+        {galleries.map((gallery, idx) => (
+          <Gallery
+            key={gallery.name + idx}
+            name={gallery.name}
+            images={gallery.images}
+          />
         ))}
       </Slider>
     </div>

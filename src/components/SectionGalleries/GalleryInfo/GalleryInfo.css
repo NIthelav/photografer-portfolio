@@ -48,3 +48,21 @@
 .gallery-info__slider-point_active {
   background-color: aqua;
 }
+
+.gallery-info__arrow {
+  content: "";
+  height: 10px;
+  width: 10px;
+}
+
+.gallery-info__arrow_right {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.gallery-info__arrow_left {
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  transform: rotate(45deg);
+}

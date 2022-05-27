@@ -8,20 +8,3 @@
   box-shadow: 1vw 1vw 20px 10px rgba(0, 0, 0, 0.7);
   transition: 0.3s linear;
 }
-
-.slider__item_layer_1 {
-  display: flex;
-  z-index: 100;
-}
-
-.slider__item_layer_2 {
-  z-index: 99;
-  margin-left: 1.5vw;
-  margin-top: 1.5vw;
-}
-
-.slider__item_layer_3 {
-  z-index: 98;
-  margin-left: 3vw;
-  margin-top: 3vw;
-}

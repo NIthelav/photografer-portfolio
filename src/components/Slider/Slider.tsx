@@ -45,9 +45,6 @@ export const Slider: FC<SliderProps> = ({
         )
       );
       if (setActiveSlide) setActiveSlide(idx);
-      console.log(
-        `idx: ${idx}, styles.__index: ${styles.map(({ __index }) => __index)}`
-      );
     },
     [styles]
   );
@@ -62,7 +59,8 @@ export const Slider: FC<SliderProps> = ({
         () =>
           childArr.map((node, idx) => (
             <div
-              className={block("item")}
+              key={idx + node.toString()}
+              className={block("item", { active: idx === activeSlide })}
               style={styles[idx]}
               onClick={() => swapSlides(idx)}
             >

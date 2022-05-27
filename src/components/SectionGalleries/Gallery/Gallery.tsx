@@ -15,6 +15,7 @@ export const Gallery: FC<Props> = ({ images, name }) => {
     <div className={block()}>
       {images.map((src, idx) => (
         <img
+          key={src + idx}
           src={src}
           alt={name + idx}
           className={block("image", [`grid-${idx + 1}`])}
