@@ -16,22 +16,45 @@ const block = cn("slider");
 
 interface SliderProps {
   children: ReactNode;
+  activeSlide?: number;
+  setActiveSlide?: (idx: number) => void;
 }
 
-export const Slider: FC<SliderProps> = ({ children }) => {
+export const Slider: FC<SliderProps> = ({
+  children,
+  activeSlide,
+  setActiveSlide,
+}) => {
   const childArr = useMemo(() => Children.toArray(children), [children]);
 
-  const [slides, setSlides] = useState(childArr.map((_, idx) => idx));
-  useEffect(() => setSlides(childArr.map((_, idx) => idx)), [childArr]);
-
-  const styles = useMemo(
-    () =>
-      childArr.map((_, idx) => ({
-        zIndex: 100 - idx,
-        transform: `translate(${1.5 * idx}vw, ${1.5 * idx}vw)`,
-      })),
-    [childArr]
+  const [styles, setStyles] = useState(() =>
+    childArr.map((_, idx) => ({
+      zIndex: 100 - idx,
+      transform: `translate(${1.5 * idx}vw, ${1.5 * idx}vw)`,
+      __index: idx,
+    }))
   );
+
+  const swapSlides = useCallback(
+    (idx: number) => {
+      setStyles(
+        swap(
+          styles,
+          idx,
+          styles.findIndex(({ __index }) => __index === 0)
+        )
+      );
+      if (setActiveSlide) setActiveSlide(idx);
+      console.log(
+        `idx: ${idx}, styles.__index: ${styles.map(({ __index }) => __index)}`
+      );
+    },
+    [styles]
+  );
+
+  useEffect(() => {
+    if (activeSlide !== undefined) swapSlides(activeSlide);
+  }, [activeSlide]);
 
   return (
     <div className={block()}>
@@ -40,21 +63,13 @@ export const Slider: FC<SliderProps> = ({ children }) => {
           childArr.map((node, idx) => (
             <div
               className={block("item")}
-              style={styles[slides[idx]]}
-              onClick={() =>
-                setSlides(
-                  swap(
-                    slides,
-                    idx,
-                    slides.findIndex((val) => val === 0)
-                  )
-                )
-              }
+              style={styles[idx]}
+              onClick={() => swapSlides(idx)}
             >
               {node}
             </div>
           )),
-        [slides]
+        [styles]
       )}
     </div>
   );

@@ -30,3 +30,21 @@
   margin: 2vh 0;
   line-height: 2em;
 }
+
+.gallery-info__slider-points {
+  display: flex;
+}
+
+.gallery-info__slider-point {
+  content: "";
+  background-color: white;
+  border-color: aqua;
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  border-radius: 100%;
+}
+
+.gallery-info__slider-point_active {
+  background-color: aqua;
+}
