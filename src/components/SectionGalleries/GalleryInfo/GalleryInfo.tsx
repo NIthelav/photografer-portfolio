@@ -8,6 +8,7 @@ const block = cn("gallery-info");
 export const GalleryInfo = () => {
   return (
     <div className={block()}>
+      <br className={block("line")} />
       <h1 className={block("title")}>Title</h1>
       <p className={block("text")}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A quasi quis
@@ -15,6 +16,7 @@ export const GalleryInfo = () => {
         distinctio, quae natus itaque tempore magni dolorem fugiat? Reiciendis,
         neque.
       </p>
+      <br className={block("line")} />
     </div>
   );
 };

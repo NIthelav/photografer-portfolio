@@ -5,3 +5,28 @@
   max-width: 20vw;
   padding-right: 6vw;
 }
+
+.gallery-info__line {
+  content: "";
+  width: 5vw;
+  height: 1px;
+  background-color: white;
+}
+
+.gallery-info__line:first-child {
+  margin-bottom: 3vh;
+}
+
+.gallery-info__line:last-child {
+  margin-top: 3vh;
+}
+
+.gallery-info__title {
+  font-weight: normal;
+}
+
+.gallery-info__text {
+  font-size: 0.9em;
+  margin: 2vh 0;
+  line-height: 2em;
+}
