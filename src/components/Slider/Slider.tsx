@@ -62,7 +62,10 @@ export const Slider: FC<SliderProps> = ({
               key={idx + node.toString()}
               className={block("item", { active: idx === activeSlide })}
               style={styles[idx]}
-              onClick={() => swapSlides(idx)}
+              onClickCapture={(event) => {
+                swapSlides(idx);
+                idx !== activeSlide && event.stopPropagation();
+              }}
             >
               {node}
             </div>

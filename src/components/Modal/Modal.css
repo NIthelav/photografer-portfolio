@@ -1,0 +1,34 @@
+.Modal-Shadow {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 999;
+}
+
+.Modal-Content {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: fixed;
+  z-index: 1000;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.Modal-Content_size_medium {
+  top: 5vh;
+  left: calc(50% - 15vw);
+}
+
+.Modal-Content_size_large {
+  top: 3vh;
+  padding: 15px;
+  min-width: 60vw;
+  max-width: 60vw;
+  left: calc(50% - 30vw);
+}

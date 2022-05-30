@@ -65,3 +65,7 @@
 .grid-11 {
   grid-area: eleven;
 }
+
+.gallery__modal-image {
+  max-height: 90vh;
+}
