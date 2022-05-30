@@ -12,9 +12,8 @@ export const Theme = () => {
   return (
     <div className={block()}>
       <p>{theme}</p>
-      <button onClick={() => dispatch(setTheme("dark"))}>dark</button>
-      <button onClick={() => dispatch(setTheme("light"))}>light</button>
-      <button onClick={() => dispatch(setTheme("blue"))}>blue</button>
+      <button onClick={() => dispatch(setTheme("dark-theme"))}>dark</button>
+      <button onClick={() => dispatch(setTheme("light-theme"))}>light</button>
     </div>
   );
 };

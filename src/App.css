@@ -1,20 +1,19 @@
-:root {
+.dark-theme {
   --primary-bg-color: #1e2327;
   --secondary-bg-color: #e9a904;
-  --primary-tx-color: #ffffff;
+  --primary-tx-color: #c3c4c5;
   --secondary-tx-color: #6d767f;
-}
-
-.blue-theme {
-  --primary-bg-color: #1e2327;
-  --secondary-bg-color: #04a9e9;
 }
 
 .light-theme {
   --primary-bg-color: #e9f6ff;
-  --secondary-bg-color: #e9a904;
-  --primary-tx-color: #000000;
+  --secondary-bg-color: #ffbb00;
+  --primary-tx-color: #292929;
   --secondary-tx-color: #222527;
+}
+
+.App {
+  color: var(--primary-tx-color);
 }
 
 .background {

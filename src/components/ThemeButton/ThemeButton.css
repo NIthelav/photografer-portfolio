@@ -1,0 +1,10 @@
+.theme-button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 100%;
+  border: 2px solid var(--primary-tx-color);
+  top: 10vh;
+  left: 1vw;
+}

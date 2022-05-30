@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
-type Theme = "dark" | "blue" | "yellow" | "light";
+type Theme = "dark-theme" | "light-theme";
 export interface ThemeState {
   theme: Theme;
 }
 
 const initialState: ThemeState = {
-  theme: "dark",
+  theme: "dark-theme",
 };
 
 export const themeSlice = createSlice({
@@ -22,10 +22,13 @@ export const themeSlice = createSlice({
       // immutable state based off those changes
       state.theme = action.payload;
     },
+    toggleTheme: (state) => {
+      state.theme = state.theme === "dark-theme" ? "light-theme" : "dark-theme";
+    },
   },
 });
 
-export const { setTheme } = themeSlice.actions;
+export const { setTheme, toggleTheme } = themeSlice.actions;
 
 export const getTheme = (state: RootState) => state.theme.theme;
 

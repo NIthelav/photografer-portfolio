@@ -1,5 +1,6 @@
 .gallery {
   display: grid;
+  user-select: none;
   max-width: 36vw;
   grid-template-columns: 9vw 9vw 9vw 9vw;
   grid-template-rows: 9vw 9vw 9vw 9vw;
@@ -68,4 +69,5 @@
 
 .gallery__modal-image {
   max-height: 90vh;
+  max-width: 60vw;
 }

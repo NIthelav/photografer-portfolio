@@ -10,7 +10,7 @@
   content: "";
   width: 5vw;
   height: 1px;
-  background-color: white;
+  background-color: var(--primary-tx-color);
 }
 
 .gallery-info__line:first-child {
@@ -38,8 +38,7 @@
 
 .gallery-info__slider-point {
   content: "";
-  background-color: white;
-  border-color: aqua;
+  background-color: var(--primary-tx-color);
   height: 12px;
   width: 12px;
   margin: 5px;
@@ -47,23 +46,24 @@
 }
 
 .gallery-info__slider-point_active {
-  background-color: aqua;
+  background-color: var(--secondary-bg-color);
 }
 
 .gallery-info__arrow {
   content: "";
   height: 10px;
   width: 10px;
+  border-color: var(--primary-tx-color);
 }
 
 .gallery-info__arrow_right {
-  border-top: 2px solid white;
-  border-right: 2px solid white;
+  border-top: 2px solid;
+  border-right: 2px solid;
   transform: rotate(45deg);
 }
 
 .gallery-info__arrow_left {
-  border-bottom: 2px solid white;
-  border-left: 2px solid white;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
   transform: rotate(45deg);
 }
